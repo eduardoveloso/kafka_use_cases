@@ -1,0 +1,15 @@
+services:
+  kafka-consumer:
+    build:
+      context: ../../
+      dockerfile: infra/docker/consumer.dockerfile
+    # container_name: kafka-consumer
+    environment:
+      - KAFKA_BROKER=kafka:9092
+      - KAFKA_TOPIC=purchase
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
+    external: true

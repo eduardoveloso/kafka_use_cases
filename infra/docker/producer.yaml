@@ -1,0 +1,15 @@
+services:
+  kafka-producer:
+    build:
+      context: ../../
+      dockerfile: infra/docker/producer.dockerfile
+    # container_name: kafka-producer
+    environment:
+      - KAFKA_BROKER=kafka:9092
+      - KAFKA_TOPIC=purchase
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
+    external: true
