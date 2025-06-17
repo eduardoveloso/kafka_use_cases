@@ -1,6 +1,6 @@
 # Apache Kafka Zero → Hero
 
-Projeto hands-on para dominar Apache Kafka do zero, com foco em fundamentos, boas práticas e integração real com Python.  
+Projeto hands-on para dominar Apache Kafka do zero, com foco em fundamentos, boas práticas e integração real com Python.
 Este repositório segue um plano semanal progressivo, com desafios práticos e automação via Docker.
 
 ---
@@ -12,8 +12,6 @@ Este repositório segue um plano semanal progressivo, com desafios práticos e a
 - [Setup Inicial](#setup-inicial)
 - [Execução dos Serviços](#execução-dos-serviços)
 - [Fluxos Principais](#fluxos-principais)
-- [Testes](#testes)
-- [Referências](#referências)
 
 ---
 
@@ -70,7 +68,7 @@ Este repositório segue um plano semanal progressivo, com desafios práticos e a
 
 ## Execução dos Serviços
 
-O script [`setup.sh`](setup.sh) orquestra toda a infraestrutura e aplicações.  
+O script [`setup.sh`](setup.sh) orquestra toda a infraestrutura e aplicações.
 **Sintaxe:**
 
 ```sh
@@ -129,26 +127,3 @@ O script [`setup.sh`](setup.sh) orquestra toda a infraestrutura e aplicações.
 - Acesse [http://localhost:8080](http://localhost:8080) para visualizar tópicos, mensagens e offsets via Kafka UI.
 
 ---
-
-## Testes
-
-- Testes automatizados estão em [`test/test.py`](test/test.py).
-- Para rodar localmente:
-
-  ```sh
-  pip install -r requirements.txt
-  python test/test.py
-  ```
-
----
-
-## Referências
-
-- [Plano Semanal de Estudos](docs/plano_semanal.md)
-- [Documentação confluent-kafka](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html)
-- [Kafka UI](https://github.com/provectus/kafka-ui)
-
----
-
-**Dúvidas ou sugestões?**  
-Abra uma issue ou contribua com PRs!
