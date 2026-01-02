@@ -1,6 +1,9 @@
 Para entrar no container do Kafka:
 > docker exec -it kafka bash
 
+Para entrar no container como root:
+> docker exec -u 0 -it kafka-broker bash
+
 Arquivos Kafka, para imagens da Confluent, ficam na pasta:
 > cd /usr/bin
 
@@ -19,8 +22,14 @@ Descrever tópico:
 Produzir mensagem:
 > kafka-console-producer --bootstrap-server localhost:9092 --topic meu-topico
 
+Produzir mensagem com chave:
+> kafka-console-producer --bootstrap-server localhost:9092 --topic meu-topico --property parse.key=true --property key.separator=:
+
 Consumir mensagem:
 > kafka-console-consumer --bootstrap-server localhost:9092 --topic meu-topico --from-beginning
+
+Consumir mensagem mostrando a key, o offset e a particao:
+> kafka-console-consumer --bootstrap-server localhost:9092 --topic meu-topico --from-beginning --property print.key=true --property print.offset=true --property print.partition=true
 
 Consumir com consumer-group:
 > kafka-console-consumer --bootstrap-server localhost:9092 --topic meu-topico --group meu-grupo --from-beginning
