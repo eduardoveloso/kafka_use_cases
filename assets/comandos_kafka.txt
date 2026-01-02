@@ -42,3 +42,6 @@ Apagar tópico:
 
 Ver logs do Kafka:
 > tail -f /var/log/kafka/server.log
+
+Local de armazenamento dos dados
+> ls /var/lib/kafka/data
