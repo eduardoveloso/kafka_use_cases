@@ -1,0 +1,44 @@
+Para entrar no container do Kafka:
+> docker exec -it kafka bash
+
+Arquivos Kafka, para imagens da Confluent, ficam na pasta:
+> cd /usr/bin
+
+Teste rápido para validar se o Kafka está funcionando corretamente:
+> kafka-topics --version
+
+Listar tópicos:
+> kafka-topics --bootstrap-server localhost:9092 --list
+
+Criar tópico:
+> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
+
+Descrever tópico:
+> kafka-topics --bootstrap-server localhost:9092 --describe --topic meu-topico
+
+Produzir mensagem:
+> kafka-console-producer --bootstrap-server localhost:9092 --topic meu-topico
+
+Consumir mensagem:
+> kafka-console-consumer --bootstrap-server localhost:9092 --topic meu-topico --from-beginning
+
+Consumir com consumer-group:
+> kafka-console-consumer --bootstrap-server localhost:9092 --topic meu-topico --group meu-grupo --from-beginning
+
+Listar consumer-groups:
+> kafka-consumer-groups --bootstrap-server localhost:9092 --list
+
+Descrever consumer-group:
+> kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group meu-grupo
+
+Resetar offset do consumer-group:
+> kafka-consumer-groups --bootstrap-server localhost:9092 --group meu-grupo --reset-offsets --to-earliest --topic meu-topico --execute
+
+Ver offsets do consumer-group:
+> kafka-run-class kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic meu-topico
+
+Apagar tópico:
+> kafka-topics --bootstrap-server localhost:9092 --delete --topic meu-topico
+
+Ver logs do Kafka:
+> tail -f /var/log/kafka/server.log

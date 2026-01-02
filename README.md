@@ -30,7 +30,6 @@ Este repositório segue um plano semanal progressivo, com desafios práticos e a
 │   ├── cmd/              # Scripts shell para subir serviços/produtores/consumidores
 │   └── docker/           # Arquivos docker-compose e Dockerfiles
 ├── scripts/              # Código Python dos produtores e consumidores Kafka
-├── test/                 # Testes automatizados
 ├── docs/                 # Documentação e plano de estudos
 ├── setup.sh              # Script principal de setup e orquestração
 ├── requirements.txt      # Dependências Python
